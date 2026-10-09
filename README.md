@@ -23,7 +23,6 @@ A full-stack web app that recreates the Zoom web experience: a home dashboard, i
 - **Schedule meeting:** title, description, date and time picker, duration. The link is generated automatically, saved to the database, and shown under Upcoming.
 
 **Meeting room**
-- Pre-join preview with camera preview and mic/video toggles.
 - Speaker / Gallery views, Zoom-style bottom toolbar (Mute, Video, Participants, Chat, Share, Host tools, End/Leave), browser fullscreen.
 - Meeting info popover (ID, passcode, host, copyable invite link).
 - Participants panel, kept in sync every 3 seconds.
