@@ -17,6 +17,15 @@ export function parseMeetingInput(input = "") {
   return /^\d{9,11}$/.test(digits) ? digits : null;
 }
 
+/**
+ * Invite link for a meeting, built from the site you are on right now (so it is correct on
+ * localhost and when deployed). Falls back to the backend's link outside the browser.
+ */
+export function inviteLink(meeting) {
+  if (typeof window === "undefined") return meeting.invite_link;
+  return `${window.location.origin}/j/${meeting.meeting_code}`;
+}
+
 export function formatTime(iso) {
   return new Date(iso).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
 }

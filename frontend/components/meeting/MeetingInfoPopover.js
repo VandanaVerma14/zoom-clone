@@ -2,7 +2,7 @@
 
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
-import { copyToClipboard, formatMeetingCode } from "@/lib/format";
+import { copyToClipboard, formatMeetingCode, inviteLink } from "@/lib/format";
 
 /**
  * Dark "meeting information" card shown under the title pill in the top bar.
@@ -13,7 +13,7 @@ export default function MeetingInfoPopover({ meeting, me, onViewInfo, onHostTool
   const isHost = me.role === "host";
 
   async function handleCopy() {
-    if (await copyToClipboard(meeting.invite_link)) {
+    if (await copyToClipboard(inviteLink(meeting))) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     }
@@ -30,8 +30,8 @@ export default function MeetingInfoPopover({ meeting, me, onViewInfo, onHostTool
       <dl className="space-y-4 text-sm sm:text-base">
         <InfoRow label="Invite link">
           <div className="flex items-center gap-2">
-            <a href={meeting.invite_link} target="_blank" rel="noreferrer" className="min-w-0 flex-1 truncate text-[#4A9EFF] hover:underline">
-              {meeting.invite_link}
+            <a href={inviteLink(meeting)} target="_blank" rel="noreferrer" className="min-w-0 flex-1 truncate text-[#4A9EFF] hover:underline">
+              {inviteLink(meeting)}
             </a>
             <button
               onClick={handleCopy}

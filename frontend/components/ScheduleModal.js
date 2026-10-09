@@ -3,7 +3,7 @@
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { api } from "@/lib/api";
-import { copyToClipboard, formatDate, formatDuration, formatMeetingCode, formatTime } from "@/lib/format";
+import { copyToClipboard, formatDate, formatDuration, formatMeetingCode, formatTime, inviteLink } from "@/lib/format";
 import Modal from "./Modal";
 
 // Default start = next full half hour
@@ -63,7 +63,7 @@ export default function ScheduleModal({ userName, onClose, onScheduled }) {
   }
 
   async function handleCopy() {
-    if (await copyToClipboard(created.invite_link)) {
+    if (await copyToClipboard(inviteLink(created))) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     }
@@ -80,7 +80,7 @@ export default function ScheduleModal({ userName, onClose, onScheduled }) {
           <div>
             <p className="mb-1 text-zoom-muted">Invite link</p>
             <div className="flex items-center gap-2 rounded-lg bg-gray-100 px-3 py-2">
-              <span className="flex-1 truncate">{created.invite_link}</span>
+              <span className="flex-1 truncate">{inviteLink(created)}</span>
               <button onClick={handleCopy} className="text-zoom-blue" title="Copy link">
                 {copied ? <Check size={16} /> : <Copy size={16} />}
               </button>

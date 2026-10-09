@@ -8,7 +8,7 @@ import useLocalMedia from "@/hooks/useLocalMedia";
 import useMeetingPolling from "@/hooks/useMeetingPolling";
 import useMeetingRTC from "@/hooks/useMeetingRTC";
 import { api } from "@/lib/api";
-import { copyToClipboard } from "@/lib/format";
+import { copyToClipboard, inviteLink } from "@/lib/format";
 import MeetingTopBar from "./MeetingTopBar";
 import ChatPanel from "./ChatPanel";
 import ParticipantsPanel from "./ParticipantsPanel";
@@ -212,8 +212,9 @@ export default function MeetingRoom() {
   }
 
   async function invite() {
-    const ok = await copyToClipboard(meeting.invite_link);
-    showToast(ok ? "Invite link copied to clipboard" : meeting.invite_link);
+    const link = inviteLink(meeting);
+    const ok = await copyToClipboard(link);
+    showToast(ok ? "Invite link copied to clipboard" : link);
   }
 
   async function leave() {

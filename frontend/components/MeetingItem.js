@@ -2,7 +2,7 @@
 
 import { Check, Copy, Users } from "lucide-react";
 import { useState } from "react";
-import { copyToClipboard, formatDate, formatDuration, formatMeetingCode, formatTime, isToday } from "@/lib/format";
+import { copyToClipboard, formatDate, formatDuration, formatMeetingCode, formatTime, inviteLink, isToday } from "@/lib/format";
 
 /**
  * One row in the Upcoming or Recent list.
@@ -13,7 +13,7 @@ export default function MeetingItem({ meeting, variant, onStart }) {
   const when = variant === "recent" ? meeting.started_at || meeting.start_time : meeting.start_time;
 
   async function handleCopy() {
-    if (await copyToClipboard(meeting.invite_link)) {
+    if (await copyToClipboard(inviteLink(meeting))) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
     }
