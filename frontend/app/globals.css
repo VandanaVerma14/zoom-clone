@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-white text-zoom-text antialiased;
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-zoom-blue px-4 py-2 text-sm font-bold text-white transition hover:bg-[#0849cc] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply rounded-lg border border-zoom-border bg-white px-4 py-2 text-sm font-bold text-zoom-text transition hover:bg-gray-50;
+  }
+  .input {
+    @apply w-full rounded-lg border border-zoom-border px-3 py-2 text-sm outline-none transition focus:border-zoom-blue focus:ring-2 focus:ring-zoom-blue/20;
+  }
+  .label {
+    @apply mb-1 block text-sm font-bold text-zoom-text;
+  }
+}
