@@ -4,8 +4,8 @@ A full-stack web app that recreates the Zoom web experience: a home dashboard, i
 
 ## Live demo
 
-- **Live app:** _add your Vercel link here_ (e.g. `https://your-app.vercel.app`)
-- **API docs:** _add your Render link here_ + `/docs` (e.g. `https://your-api.onrender.com/docs`)
+- **Live app:** _add your Vercel link here_ (e.g. `[https://your-app.vercel.app](https://zoom-clone-lyart-six.vercel.app/)`)
+
 
 > The backend runs on a free tier, so the first request after a period of inactivity can take up to a minute while the server wakes up.
 
