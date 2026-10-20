@@ -2,9 +2,9 @@
 
 A full-stack web app that recreates the Zoom web experience: a home dashboard, instant meetings, joining by ID or invite link, scheduling, and a meeting room with live video, screen sharing, chat, participant management and host controls.
 
-## Live demo
+## Live Demo
 
-- **Live app:** _add your Vercel link here_ (e.g. `https://zoom-clone-lyart-six.vercel.app`)
+🔗 **Live App:** https://zoom-clone-lyart-six.vercel.app
 
 
 > The backend runs on a free tier, so the first request after a period of inactivity can take up to a minute while the server wakes up.
